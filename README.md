@@ -6,15 +6,17 @@ Example of log4j2 and logstash configurations working together
 Dummy java project with log4j2 configuration file
 
 Make sure to change host and port in log4j2.properties:
-'''
+
+```
 appender.socket.host=
 appender.socket.port=
-'''
+```
 
 ## logstash configuration
 
 log4j.conf with output to elasticsearch
-'''
+
+```
 input {
   tcp {
     port => 5000
@@ -28,6 +30,6 @@ output {
 	index => "java"
   }
 }
-'''
+```
 
 For example using deb ubuntu installation place it to /etc/logstash/conf.d
